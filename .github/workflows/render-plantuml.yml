@@ -1,0 +1,21 @@
+name: Render PlantUML
+
+on:
+  push:
+    branches: 
+      - master
+
+jobs:
+  render-plantuml:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Render UML Diagrams
+      uses: frederikheld/render-plantuml-to-wiki-action@v1.0.2
+      with: 
+        WIKI_TOKEN: ${{ secrets.WIKI_TOKEN }}
+        INPUT_DIR: diagrams
+        OUTPUT_DIR: attachments/auto-generated/diagrams/png
+        
