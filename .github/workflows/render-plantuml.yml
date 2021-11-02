@@ -8,8 +8,9 @@ on:
 jobs:
   render-plantuml:
     runs-on: ubuntu-latest
-    env: ACTION_UNDER_TEST: rotarur/render-plantuml-to-wiki-action@master
-    #env: frederikheld/render-plantuml-to-wiki-action@v1.0.2
+    env:
+      ACTION_UNDER_TEST: rotarur/render-plantuml-to-wiki-action@master
+      # ACTION_UNDER_TEST: frederikheld/render-plantuml-to-wiki-action@v1.0.2
 
     steps:
     - uses: actions/checkout@v2
