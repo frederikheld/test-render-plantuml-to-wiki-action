@@ -44,14 +44,14 @@ jobs:
       uses: rotarur/render-plantuml-to-wiki-action@master
       with: 
         WIKI_TOKEN: ${{ secrets.WIKI_TOKEN }}
-        INPUT_DIR: diagrams/planning
+        INPUT_DIR: diagrams/architecture
         OUTPUT_DIR: attachments/auto-generated/diagrams/png-default
 
     - name: Test output format PNG (explicit)
       uses: rotarur/render-plantuml-to-wiki-action@master
       with: 
         WIKI_TOKEN: ${{ secrets.WIKI_TOKEN }}
-        INPUT_DIR: diagrams/planning
+        INPUT_DIR: diagrams/architecture
         OUTPUT_DIR: attachments/auto-generated/diagrams/png
         OUTPUT_FORMAT: PNG
 
@@ -59,7 +59,7 @@ jobs:
       uses: rotarur/render-plantuml-to-wiki-action@master
       with: 
         WIKI_TOKEN: ${{ secrets.WIKI_TOKEN }}
-        INPUT_DIR: diagrams/planning
+        INPUT_DIR: diagrams/architecture
         OUTPUT_DIR: attachments/auto-generated/diagrams/svg
         OUTPUT_FORMAT: SVG
 
@@ -67,7 +67,7 @@ jobs:
       uses: rotarur/render-plantuml-to-wiki-action@master
       with: 
         WIKI_TOKEN: ${{ secrets.WIKI_TOKEN }}
-        INPUT_DIR: diagrams/planning
+        INPUT_DIR: diagrams/architecture
         OUTPUT_DIR: attachments/auto-generated/diagrams/pdf
         OUTPUT_FORMAT: PDF
 
@@ -75,7 +75,7 @@ jobs:
       uses: rotarur/render-plantuml-to-wiki-action@master
       with: 
         WIKI_TOKEN: ${{ secrets.WIKI_TOKEN }}
-        INPUT_DIR: diagrams/planning
+        INPUT_DIR: diagrams/architecture
         OUTPUT_DIR: attachments/auto-generated/diagrams/eps
         OUTPUT_FORMAT: EPS
         
