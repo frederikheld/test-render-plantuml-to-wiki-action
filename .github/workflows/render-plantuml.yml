@@ -6,7 +6,32 @@ on:
       - main
 
 jobs:
+  test-multi-step:
+    # Render different input directories in different steps
+
+    runs-on: ubuntu-lastest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Render Planning Diagrams
+      uses: rotarur/render-plantuml-to-wiki-action@master
+      with: 
+        WIKI_TOKEN: ${{ secrets.WIKI_TOKEN }}
+        INPUT_DIR: diagrams/planning
+        OUTPUT_DIR: attachments/auto-generated/diagrams/architecture
+
+
+    - name: Render Architecture Diagrams
+      uses: rotarur/render-plantuml-to-wiki-action@master
+      with: 
+        WIKI_TOKEN: ${{ secrets.WIKI_TOKEN }}
+        INPUT_DIR: diagrams/architecture
+        OUTPUT_DIR: attachments/auto-generated/diagrams/planning
+
   test-output-formats:
+    # Render different output formats of same input directory
+
     runs-on: ubuntu-latest
     # env:
       # ACTION_UNDER_TEST: "rotarur/render-plantuml-to-wiki-action@master"
@@ -19,14 +44,14 @@ jobs:
       uses: rotarur/render-plantuml-to-wiki-action@master
       with: 
         WIKI_TOKEN: ${{ secrets.WIKI_TOKEN }}
-        INPUT_DIR: diagrams
+        INPUT_DIR: diagrams/planning
         OUTPUT_DIR: attachments/auto-generated/diagrams/png-default
 
     - name: Test output format PNG (explicit)
       uses: rotarur/render-plantuml-to-wiki-action@master
       with: 
         WIKI_TOKEN: ${{ secrets.WIKI_TOKEN }}
-        INPUT_DIR: diagrams
+        INPUT_DIR: diagrams/planning
         OUTPUT_DIR: attachments/auto-generated/diagrams/png
         OUTPUT_FORMAT: PNG
 
@@ -34,7 +59,7 @@ jobs:
       uses: rotarur/render-plantuml-to-wiki-action@master
       with: 
         WIKI_TOKEN: ${{ secrets.WIKI_TOKEN }}
-        INPUT_DIR: diagrams
+        INPUT_DIR: diagrams/planning
         OUTPUT_DIR: attachments/auto-generated/diagrams/svg
         OUTPUT_FORMAT: SVG
 
@@ -42,7 +67,7 @@ jobs:
       uses: rotarur/render-plantuml-to-wiki-action@master
       with: 
         WIKI_TOKEN: ${{ secrets.WIKI_TOKEN }}
-        INPUT_DIR: diagrams
+        INPUT_DIR: diagrams/planning
         OUTPUT_DIR: attachments/auto-generated/diagrams/pdf
         OUTPUT_FORMAT: PDF
 
@@ -50,7 +75,7 @@ jobs:
       uses: rotarur/render-plantuml-to-wiki-action@master
       with: 
         WIKI_TOKEN: ${{ secrets.WIKI_TOKEN }}
-        INPUT_DIR: diagrams
+        INPUT_DIR: diagrams/planning
         OUTPUT_DIR: attachments/auto-generated/diagrams/eps
         OUTPUT_FORMAT: EPS
         
