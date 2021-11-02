@@ -8,15 +8,48 @@ on:
 jobs:
   render-plantuml:
     runs-on: ubuntu-latest
+    env: ACTION_UNDER_TEST: rotarur/render-plantuml-to-wiki-action@master
+    #env: frederikheld/render-plantuml-to-wiki-action@v1.0.2
 
     steps:
     - uses: actions/checkout@v2
 
-    - name: Render UML Diagrams
-      #uses: frederikheld/render-plantuml-to-wiki-action@v1.0.2
-      uses: rotarur/render-plantuml-to-wiki-action@master
+    - name: Test output format PNG (default)
+      uses: ${{ env.ACTION_UNDER_TEST }}
+      with: 
+        WIKI_TOKEN: ${{ secrets.WIKI_TOKEN }}
+        INPUT_DIR: diagrams
+        OUTPUT_DIR: attachments/auto-generated/diagrams/png-default
+
+    - name: Test output format PNG (explicit)
+      uses: ${{ env.ACTION_UNDER_TEST }}
       with: 
         WIKI_TOKEN: ${{ secrets.WIKI_TOKEN }}
         INPUT_DIR: diagrams
         OUTPUT_DIR: attachments/auto-generated/diagrams/png
+        OUTPUT_FORMAT: PNG
+
+    - name: Test output format SVG
+      uses: ${{ env.ACTION_UNDER_TEST }}
+      with: 
+        WIKI_TOKEN: ${{ secrets.WIKI_TOKEN }}
+        INPUT_DIR: diagrams
+        OUTPUT_DIR: attachments/auto-generated/diagrams/svg
+        OUTPUT_FORMAT: SVG
+
+    - name: Test output format PDF
+      uses: ${{ env.ACTION_UNDER_TEST }}
+      with: 
+        WIKI_TOKEN: ${{ secrets.WIKI_TOKEN }}
+        INPUT_DIR: diagrams
+        OUTPUT_DIR: attachments/auto-generated/diagrams/pdf
+        OUTPUT_FORMAT: PDF
+
+    - name: Test output format EPS
+      uses: ${{ env.ACTION_UNDER_TEST }}
+      with: 
+        WIKI_TOKEN: ${{ secrets.WIKI_TOKEN }}
+        INPUT_DIR: diagrams
+        OUTPUT_DIR: attachments/auto-generated/diagrams/eps
+        OUTPUT_FORMAT: EPS
         
