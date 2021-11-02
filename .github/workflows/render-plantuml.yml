@@ -8,7 +8,7 @@ on:
 jobs:
   test-output-formats:
     runs-on: ubuntu-latest
-    env:
+    # env:
       # ACTION_UNDER_TEST: "rotarur/render-plantuml-to-wiki-action@master"
       # ACTION_UNDER_TEST: frederikheld/render-plantuml-to-wiki-action@v1.0.2
 
