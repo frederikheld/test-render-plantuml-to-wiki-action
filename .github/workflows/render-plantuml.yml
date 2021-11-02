@@ -13,7 +13,8 @@ jobs:
     - uses: actions/checkout@v2
 
     - name: Render UML Diagrams
-      uses: frederikheld/render-plantuml-to-wiki-action@v1.0.2
+      #uses: frederikheld/render-plantuml-to-wiki-action@v1.0.2
+      uses: rotarur/render-plantum-to-wiki-action
       with: 
         WIKI_TOKEN: ${{ secrets.WIKI_TOKEN }}
         INPUT_DIR: diagrams
