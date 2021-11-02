@@ -16,7 +16,7 @@ jobs:
     - uses: actions/checkout@v2
 
     - name: Test output format PNG (default)
-      uses: v
+      uses: rotarur/render-plantuml-to-wiki-action@master
       with: 
         WIKI_TOKEN: ${{ secrets.WIKI_TOKEN }}
         INPUT_DIR: diagrams
