@@ -14,7 +14,7 @@ jobs:
 
     - name: Render UML Diagrams
       #uses: frederikheld/render-plantuml-to-wiki-action@v1.0.2
-      uses: rotarur/render-plantum-to-wiki-action@master
+      uses: rotarur/render-plantuml-to-wiki-action@master
       with: 
         WIKI_TOKEN: ${{ secrets.WIKI_TOKEN }}
         INPUT_DIR: diagrams
