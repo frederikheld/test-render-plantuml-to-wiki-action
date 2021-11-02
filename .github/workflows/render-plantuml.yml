@@ -7,7 +7,7 @@ on:
 
 jobs:
   test-multi-step:
-    # Render different input directories in different steps
+    name: Render different input directories in different steps
 
     runs-on: ubuntu-lastest
 
@@ -30,7 +30,7 @@ jobs:
         OUTPUT_DIR: attachments/auto-generated/diagrams/planning
 
   test-output-formats:
-    # Render different output formats of same input directory
+    name: Render different output formats of same input directory
 
     runs-on: ubuntu-latest
     # env:
