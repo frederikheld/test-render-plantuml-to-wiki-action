@@ -9,14 +9,14 @@ jobs:
   test-output-formats:
     runs-on: ubuntu-latest
     env:
-      ACTION_UNDER_TEST: rotarur/render-plantuml-to-wiki-action@master
+      ACTION_UNDER_TEST: "rotarur/render-plantuml-to-wiki-action@master"
       # ACTION_UNDER_TEST: frederikheld/render-plantuml-to-wiki-action@v1.0.2
 
     steps:
     - uses: actions/checkout@v2
 
     - name: Test output format PNG (default)
-      uses: "${{ env.ACTION_UNDER_TEST }}"
+      uses: ${{ env.ACTION_UNDER_TEST }}
       with: 
         WIKI_TOKEN: ${{ secrets.WIKI_TOKEN }}
         INPUT_DIR: diagrams
