@@ -1,0 +1,16 @@
+@startgantt
+
+projectscale weekly
+Project Starts 2021-11-01
+
+-- Sub Project 1 --
+
+[Work Package 1] as [WP1] lasts 5 days and is colored in MediumSeaGreen
+[Work package 2] as [WP2] starts at [WP1]'s end and lasts 10 days
+
+-- Sub Project 2 --
+
+[Work Package 3] as [WP3] lasts 12 days and is colored in IndianRed
+[Work package 4] as [WP4] starts at [WP1]'s end and lasts 24 days
+
+@endgantt

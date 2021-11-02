@@ -1,0 +1,5 @@
+@startuml Diagram 1
+[this] --> [that]
+[something else] --> [that]
+[that] --> end
+@enduml
